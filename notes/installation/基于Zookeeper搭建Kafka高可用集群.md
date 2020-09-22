@@ -53,7 +53,7 @@ server.3=127.0.0.1:2289:3389
 
 > 如果是多台服务器，则集群中每个节点通讯端口和选举端口可相同，IP 地址修改为每个节点所在主机 IP 即可。
 
-zookeeper02 配置，与 zookeeper01 相比，只有 `dataLogDir` 和 `dataLogDir` 不同：
+zookeeper02 配置，与 zookeeper01 相比，只有 `dataLogDir`、`dataLogDir` 和 `clientPort` 不同：
 
 ```shell
 tickTime=2000
@@ -68,7 +68,7 @@ server.2=127.0.0.1:2288:3388
 server.3=127.0.0.1:2289:3389
 ```
 
-zookeeper03 配置，与 zookeeper01，02 相比，也只有 `dataLogDir` 和 `dataLogDir` 不同：
+zookeeper03 配置，与 zookeeper01，02 相比，也只有 `dataLogDir`、`dataLogDir` 和 `clientPort` 不同：
 
 ```shell
 tickTime=2000
@@ -137,7 +137,7 @@ echo "3" > /usr/local/zookeeper-cluster/data/03/myid
 
 使用 jps 查看进程，并且使用 `zkServer.sh status` 查看集群各个节点状态。如图三个节点进程均启动成功，并且两个节点为 follower 节点，一个节点为 leader 节点。
 
-<div align="center"> <img  src="../../pictures/zookeeper-cluster.png"/> </div>
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/zookeeper-cluster.png"/> </div>
 
 
 
@@ -229,7 +229,7 @@ bin/kafka-topics.sh --create --bootstrap-server hadoop001:9092 \
 bin/kafka-topics.sh --describe --bootstrap-server hadoop001:9092 --topic my-replicated-topic
 ```
 
-<div align="center"> <img src="../../pictures/kafka-cluster-shell.png"/> </div>
+<div align="center"> <img src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/kafka-cluster-shell.png"/> </div>
 
 
 
@@ -237,3 +237,6 @@ bin/kafka-topics.sh --describe --bootstrap-server hadoop001:9092 --topic my-repl
 
 
 
+
+
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/weixin-desc.png"/> </div>
